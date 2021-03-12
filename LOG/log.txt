@@ -6773,7 +6773,7 @@
         14:31 2021/03/11 現在已經改成 function(_me){push(_me.value)} 了
     [X] see OneNote2020 > 2020 > "Jeforth variable 變革" jeforth.3we 改好了, 幸好沒多少 vm.forth.var 
         also see Evernote > OneNote2020 > "Jeforth variable 變革"
-    [X] jeforth.3ca ok now, also 3hta, 3nd, [X] proeforth, [ ] peforth
+    [X] jeforth.3ca ok now, also 3hta, 3nd, [X] proeforth, [ ] peforth <--- don't forget 2021/03/12 09:41:59 
         [X] 2020/07/24 16:47:28 copy 3 words 'constant value to' from 3we to proeforth 
             [X] 2020/07/24 17:45:17 try to run proeforth there are several errors due to vm.forth.something, all fixed by refer to .3we code
         [X] 2020/07/24 17:46:53 proceed to peforth with the 3 words 'constant' 'value' and 'to'.
@@ -6800,14 +6800,6 @@
             02895: RET (null)
             ---------- End of the definition -----------
              OK 
-[ ] 15:28 2021/03/11 如何從 js code 中直接 access FORTH values ?
-        
-[ ] 仿 peforth 進一步用 v('varName') or r('varName') 在沒有 support jeforth 的 private 特性時是可以的。。嗎？
-    目前 v() 不是用 tick('x') 的，用 tick() 應該不是很正確，危險。r('y') 可能還好，但可能根本不必存在。
-    def v(name):
-        return getattr(vm,context)[name]
-    def r(name):
-        return vm.forth[name]
 
 [X] 2020/07/17 13:08:37 準備開發 proeforth DOS 版。Search evernote 找到了 weforth wef01 wef02 fsharp f# dropbox. 
     --> dropbox 找不到！可能已經上 github 了？
@@ -6834,11 +6826,8 @@
     <script src="https://hcchengithub.github.io/project-k/projectk.js"></script>
     <script> vm = new jeForth(); </script>
     16:53 2020/07/30 done jeforth 各種版本都改了。Homepage 上的 demo 也改了，不再用 rawgit.com.
-[ ] 現在 jeforth.3htm 可以從 GitHub Pages 上直接執行了，啟動畫面改一改。。。。想想怎麼弄？     
 [X] 09:28 2021/03/11 把 proeforth.html 搬過來放在 ....
     [X] 09:32 2021/03/11 proeforth.html 計畫停止，搬到 jeforth.3we\playground\proeforth\ 保存。
-[ ] proeforth.exe 在 Bonobo repo creo.console 打算搬到 GitLab 去。
-[ ] 09:20 2021/03/11 整個 jeforth.3we & proeforth.hhtml 的 CSS 都應該要修整，考慮用 bootstrap？
 [X] 09:04 2021/03/11 proeforth 的 binlingual repl 在 chrome maximum 時跑到 inputbox 底下去了，看不到。
     11:57 2021/03/11 Not a problem, the line actually appear on the buttom of the web page but partially hidden by 
     windows task bar. 
@@ -6868,7 +6857,7 @@
     訂正為：
         s" md _a" :> replace(/_a/,tick('_a').value) --> md ..\jeforth.3ca(string)
         OK 
-    [ ] commit --> 
+    [X] commit --> develop and master
 
 [X] 17:04 2021/03/11 install 3cd by drag and drop "c:\Users\8304018\Documents\GitHub\jeforth\jeforth.3ce" 到 Chrome Browser 的 setup > extension
     page 時發生 CSP error. See my OneNote2021 > "jeforth.3ce 好久沒用一 install 冒出 CSP error"
@@ -6880,7 +6869,7 @@
         都點掉只留
             <script src="project-k/projectk.js"></script>  <-------- project-k/ folder in the project folder is the altimate solution 
         就好了，這已經是 100% 最好的答案了。
-        [ ] commit --> 
+        [X] commit -->  develop and master
     [/] 照 F12 DevTools CSP error direction to read the Google's webpage
         tried something like this <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://hcchengithub.github.io/project-k/projectk.js">    
         沒有成功，理解到我其實不需要這些坑坑巴巴的答案了。
@@ -6891,6 +6880,16 @@
 
 [ ] 16:34 2021/03/11 前兩天發現本地的 3ca 例子跑不起來了 (e.g. include h2o.f and include solar-system.f )，應該也是這個問題。
     vm[context].x or vm[current].x 都要改成 tick('x').value
+[ ] 現在 jeforth.3htm 可以從 GitHub Pages 上直接執行了，啟動畫面改一改。。。。想想怎麼弄？     
+[ ] proeforth.exe 在 Bonobo repo creo.console 打算搬到 GitLab 去。
+[ ] 09:20 2021/03/11 整個 jeforth.3we & proeforth.hhtml 的 CSS 都應該要修整，考慮用 bootstrap？
+[ ] 15:28 2021/03/11 如何從 js code 中直接 access FORTH values ?
+[ ] 仿 peforth 進一步用 v('varName') or r('varName') 在沒有 support jeforth 的 private 特性時是可以的。。嗎？
+    目前 v() 不是用 tick('x') 的，用 tick() 應該不是很正確，危險。r('y') 可能還好，但可能根本不必存在。
+    def v(name):
+        return getattr(vm,context)[name]
+    def r(name):
+        return vm.forth[name]
 
 
 
