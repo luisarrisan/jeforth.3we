@@ -3915,22 +3915,24 @@
 [ ] T550 常常突然停下來, 造成 Multiplicity 斷線. 寫程式觀察這個情形。
 
 [x] How to install nw.js       _nw.js_ _node_webkit_ _nodejs.org_  _node.js_ _installer_
-    Last 筆記 18:54 11/28/2020 
+    13:03 2021/04/27 現在已經到 nwjs-sdk-v0.52.2-win-x64.zip 了，為了順利使用 jeforth.3nw 我用以下 
+        Old Method 2, and it works fine.
+    18:54 11/28/2020 筆記 
         為了上 pirple.com 的 node.js 課我又來 install 了，雖然是 node.js 的課，還是
         來關心一下 nw.js 的狀況，最好能一舉兩個都灌好。。。 19:29 11/28/2020 Yes! 
             unzip nwjsxxx.zip 直接跑 nw.exe 即可 :-D 
         如今還是要 SDK 版的才有 F12 DevTools debugger. 上 https://nwjs.io/ 抓下來的 SDK 版
         是 nwjs-sdk-v0.50.1-win-x64.zip   
-    older 筆記
-    Method 1:
-        Unzip the nw.js package (v0.14 now use ******SDK version****** to gain F12 Debugger or DevTool)
-        and set path to it, that's all. 
-    Method 2:
-        就是把 zip 解壓, 然後整個 folder copy 到 nodejs\ 的 path folder 
-        (c:\Program Files\nodejs) 因為 node.js 有 installer, nw.js 沒有. 正好目錄結構不衝突,
-        應該可以 ==> Yes, OK.
-        Simply copy the entire nw.js unzip'ed folder to node.js folder. This is because 
-        node.js has Windows installer and nw.js has not but it can leverage node.js.
+    Older 筆記
+        Method 1:
+            Unzip the nw.js package (v0.14 now use ******SDK version****** to gain F12 Debugger or DevTool)
+            and set path to it, that's all. 
+        Method 2:
+            就是把 zip 解壓, 然後整個 folder copy 到 nodejs\ 的 path folder 
+            (c:\Program Files\nodejs) 因為 node.js 有 installer, nw.js 沒有. 正好目錄結構不衝突,
+            應該可以 ==> Yes, OK.
+            Simply copy the entire nw.js unzip'ed folder to node.js folder. This is because 
+            node.js has Windows installer and nw.js has not but it can leverage node.js.
         2020/05/02 10:10:08 測試 lang='js' on OA used this way again and it works! 
 
 
@@ -6858,6 +6860,24 @@
         s" md _a" :> replace(/_a/,tick('_a').value) --> md ..\jeforth.3ca(string)
         OK 
     [X] commit --> develop and master
+    
+    2021/05/07 16:52:21 又是這個問題發生在 h2o.f (奇怪，之前怎麼都沒發現？ 可能 GitHub 上新的 variable 
+        做法沒有 apply 到) 在 EzAuto 的 AAD back end demo 時。原來
+            vm[context].wallBounce
+        都要改寫成
+            tick('wallBounce').value
+        連帶一堆變數用到的地方都要照這樣改寫：
+            0.3	value gravity     
+            1	value wallBounce  
+            0	value friction    
+            0.58 value sticky		
+            []	value balls 		
+        而且 整個 h2o.f 原來是 private 也要點掉
+            s" h2o.f" source-code-header
+            \ true  constant privacy private // ( -- true ) All words in this module are private
+           ^^^ 點掉才可以 tick('variable') 否則會有警告/Error  
+        擔心 tick('variable') 很花時間可以把 forth variable (object) 存成 Javascript 
+        global object alias 的方式解決，這倒不是問題。
 
 [X] 17:04 2021/03/11 install 3cd by drag and drop "c:\Users\8304018\Documents\GitHub\jeforth\jeforth.3ce" 到 Chrome Browser 的 setup > extension
     page 時發生 CSP error. See my OneNote2021 > "jeforth.3ce 好久沒用一 install 冒出 CSP error"
