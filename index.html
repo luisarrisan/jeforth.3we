@@ -1,43 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head id=head>
-	<title class=appname>appname</title> 
+<head id="head">
+	<title class="appname">appname</title> 
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="common.css"/>
 	<meta charset="utf-8" />
-	<!-- link rel="stylesheet" type="text/css" href="common.css" -->
-	<!-- 分別定義 textarea:focus 才可以隨時修改，隨 editMode 改變顏色 -->
-    <style id=styleTextareaFocus type="text/css"> 
-			.console3we textarea:focus {
-				background:#E0E0E0;
-			}
-    </style>
     <script src="js/jquery-1.11.2.js"></script>
 	<script src="project-k/projectk.js"></script>
     <script src="js/version.js"></script>
 	<script src="3htm/js/jeforth.3htm.js"></script>
-	<script> debugger; </script>
-	
 </head>
-<body id=body>
-	<div id=header>
-		<div style="opacity:0.2;position:absolute;top:40px;left:90px;width:300px;height:75px;background-color:#20B3DF">
-		<center><span style="color:#FFFFFF;"><br>FigTaiwan</span></center></div>
-		<div style="font-family:verdana;">
-			<b><div class=appname style="letter-spacing:16px;color:#555555;">appname</div></b>
-			<div style="color:#40B3DF;">
-			Revision <span id=rev style="background-color:#B4009E;color:#ffffff;">rev</span><br>
-			Source code http://github.com/hcchengithub/jeforth.3we<br>
-			Program path <span id=location>location</span><br>
-			</div>
-		</div>
-	</div>
-	<div class=console3we>
-	<div id="outputbox"></div>
-	<textarea id="inputbox" rows=1></textarea>
-    <span id=endofinputbox class=std>
-        <input type="radio" id="forthbtn" value="forth" name="lang" checked="checked"><label class=std>Forth</label> 
-        <input type="radio" id="jsbtn" value="js" name="lang"><label class=std>JavaScript</label>
-    </span>
-    </div><!--console3we-->
+<body id="body">
+	<header>
+		<img src="figtaiwan.jpg">
+		<p>臺灣符式推廣協會</p>
+		<p>FigTaiwan</p>
+		<img src="figtaiwan.jpg">
+	</header>
+	<main class="console3we">
+		<section id="outputbox"></section>
+		<section id="stackview">
+			<p class="center">--Stack view--</p>
+			<pre class="center">--empty--</pre>
+		</section>
+	</main>
+	<footer>
+		<textarea id="inputbox" rows="12" edit="off"></textarea>
+		<canvas id="outputcanvas">outputcanvas</canvas>
+	</footer>
+	<span id="endofinputbox"></span>
 </body>
 </html>
 
