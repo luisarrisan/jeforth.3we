@@ -1,4 +1,4 @@
-s" canvas.f"	source-code-header
+s" canvasdemo2.f"	source-code-header
 
 : my-canvas s" outputcanvas" getElementById ;
 <selftest>	." my-canvas -> " my-canvas . cr </selftest>
