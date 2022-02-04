@@ -94,15 +94,14 @@ code run-inputbox ( -- ) \ <Enter> key's run time.
 				
 : inputbox-edit-mode-on ( -- ) 
 				['] {F2} :: EditMode=true
-				<text> .console3we textarea:focus { 
-					border: 0px solid; background:#FFE0E0; /* pink indicating edit mode */
-				}</text> js: styleTextareaFocus.innerHTML=pop() ; private
+				js: $('[edit]').attr('edit','on') ; private 
 
 : inputbox-edit-mode-off ( -- ) 
 				['] {F2} :: EditMode=false
-				<text> .console3we textarea:focus { 
-					border: 0px solid; background:##E0E0E0;
-				}</text> js: styleTextareaFocus.innerHTML=pop() ; private
+				  \ <text> .console3we textarea:focus { 
+				  \ 	border: 0px solid; background:##E0E0E0;
+				  \ }</text> js: styleTextareaFocus.innerHTML=pop() ; private
+				js: $('[edit]').attr('edit','off') ; private 
 				last execute \ default mode
 
 : toggle-inputbox-edit-mode ( -- ) \ One of the {F2} events

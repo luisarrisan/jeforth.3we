@@ -58,6 +58,7 @@
 
 \ ----------------- run the command line -------------------------------------
 	args tib.insert
+	js: kvm.stackViewRefresh()
 
 \ The End 
 
