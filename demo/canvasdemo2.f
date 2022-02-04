@@ -73,9 +73,6 @@ end-code
         \ cx @ . space cy @ . cr
     next next drop show ;
 
-: rndgray random 256 * int dup dup ;
-: rndimg image.w image.h * dup 4 * 5 - swap for >r rndgray r> image! next drop show ;
-
 : sin ( x -- sin x ) js> Math.sin(pop()) ;
 
 : switzerland ( -- r g b )
@@ -87,8 +84,11 @@ end-code
   cx image.w / over / sin cy image.h / 1 swap - rot / sin
   2dup / sin 255 * rot 255 * rot 255 * rot ;
 
+: rndgray random 256 * int dup dup ;
+
 <selftest>
   ' switzerland to proto haiku ." switzerland haiku" cr 
   ' 4spire to proto haiku ." 4spire haiku" cr
+  ' rndgray to proto haiku ." 4spire haiku" cr
 </selftest>
 
