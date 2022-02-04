@@ -1,17 +1,107 @@
+* {
+	box-sizing: border-box; 
+}
 
-	.console3we div , .console3we textarea {
-		color:black;
-		font-family: courier new;
-		/* font-size: 40px; */
-		padding:20px; 
-		word-wrap:break-word;
-		border: 0px solid white;
-		background:#F0F0F0;
+.center {
+	text-align: center;
+}
+
+ol { padding: 1vh;}
+
+
+header img {
+	display: block;
+	max-width: 7vh;
+	max-height: 7vh;
+	width: auto;
+	height: auto;
+  }
+
+body {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	background-color: rgb(243, 203, 166);
+}
+
+header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	height: 8vh;
+	background-color: white;
+	margin: 1vh;
+	padding: 1vh;
+	border-radius: 1vw;
+	font-size: 4vh;
+	color: rgb(245, 0, 0);
+  }
+
+main {
+	display: flex;
+	height: 58vh;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: stretch;
+	justify-content: space-between;
+}
+
+section {
+	overflow: auto;
+	font-size: 1vw;
+	border-radius: 1vw;
+}
+
+footer {
+	display: flex;
+	height: 28vh;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: stretch;
+	justify-content: space-between;
+}
+
+#outputbox {
+	width: 68vw;
+	background-color: rgb(223, 101, 107);
+	color: white;
+	font-family: courier new;
+	word-wrap: break-word;
+	margin: 1vh;
+	padding: 1vw;
+	}
+
+#stackview {
+	width: 28vw;
+	background-color: rgb(148, 148, 148);
+	color: white;
+	margin: 1vh;
+	padding: 1vw;
+}
+
+#inputbox {
+	width: 68vw;
+	font-family: courier new;
+	font-size: 1vw;
+	border-radius: 1vw;
+	margin: 1vh;
+	padding: 1vw;
+	}
+
+#outputcanvas {
+	width: 28vw;
+	border-radius: 1vw;
+	background-color: whitesmoke;
+	margin: 1vh;
+	padding: 1vw;
 	}
 	
-	.console3we textarea {
-		width:99%; /* 這個會壓過 textarea 的 cols=n */
-		padding:4px; 
-		border: 0px solid;
-		background:#BBBBBB;
-	}
+[edit="off"] {
+	background:#d8acf7;
+}	
+
+[edit="on"] {
+	background:#FFE0E0;
+}	
