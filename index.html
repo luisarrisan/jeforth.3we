@@ -14,19 +14,28 @@
 	<header>
 		<img src="figtaiwan.jpg">
 		<p>臺灣符式推廣協會</p>
+		<p>jeforth.3htm</p>
 		<p>FigTaiwan</p>
 		<img src="figtaiwan.jpg">
 	</header>
 	<main class="console3we">
-		<section id="outputbox"></section>
-		<section id="stackview">
-			<p class="center">--Stack view--</p>
-			<pre class="center">--empty--</pre>
+		<section id="outputbox" placeholder="#outputbox"></section>
+		<section id="stackview" placeholder="#stackview">
+			<div id="stackcontent"></div>
+			<div id="stackjuggling">
+				<button onclick="kvm.dictate('drop');kvm.stackViewRefresh()">drop</button>
+				<button onclick="kvm.dictate('dup');kvm.stackViewRefresh()">dup</button>
+				<button onclick="kvm.dictate('swap');kvm.stackViewRefresh()">swap</button>
+				<button onclick="kvm.dictate('nip');kvm.stackViewRefresh()">nip</button>
+				<button onclick="kvm.dictate('over');kvm.stackViewRefresh()">over</button>
+				<button onclick="kvm.dictate('rot');kvm.stackViewRefresh()">rot</button>
+				<button onclick="kvm.dictate('-rot');kvm.stackViewRefresh()">-rot</button>
+			</div>
 		</section>
 	</main>
 	<footer>
-		<textarea id="inputbox" rows="12" edit="off"></textarea>
-		<canvas id="outputcanvas">outputcanvas</canvas>
+		<textarea id="inputbox" rows="12" edit="off" placeholder="#inputbox"></textarea>
+		<canvas id="outputcanvas"></canvas>
 	</footer>
 	<span id="endofinputbox"></span>
 </body>

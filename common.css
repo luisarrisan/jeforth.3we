@@ -9,14 +9,6 @@
 ol { padding: 1vh;}
 
 
-header img {
-	display: block;
-	max-width: 7vh;
-	max-height: 7vh;
-	width: auto;
-	height: auto;
-  }
-
 body {
 	display: flex;
 	flex-direction: column;
@@ -34,9 +26,18 @@ header {
 	background-color: white;
 	margin: 1vh;
 	padding: 1vh;
-	border-radius: 1vw;
-	font-size: 4vh;
+	border-radius: 0.5vw;
+	border-style:groove;
+	font-size: 3.5vw;
 	color: rgb(245, 0, 0);
+  }
+
+header img {
+	display: block;
+	max-width: 7vh;
+	max-height: 7vh;
+	width: auto;
+	height: auto;
   }
 
 main {
@@ -50,8 +51,98 @@ main {
 
 section {
 	overflow: auto;
-	font-size: 1vw;
-	border-radius: 1vw;
+	font-size: .8vw;
+	border-radius: 0.5vw;
+	border-style:groove;
+	margin: 1vh;
+	padding: 1vw;
+}
+
+button {
+	background-color: inherit;
+	color: inherit;
+	margin: 0.5vh;
+	padding: 0.5vw;
+	border: rgb(0, 0, 0);
+	border-radius: 0.5vw;
+	border-style:groove;
+	}
+
+section.eb.wider {
+		flex: 3;
+	}
+	
+	
+section.eb {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	flex: 2;
+	overflow: auto;
+	justify-content: flex-start;
+	border-radius: 0.5vw;
+	background-color: rgb(99, 93, 175);
+	color: white;
+	font-family: courier new;
+	}
+		
+section.eb * {
+	background-color: rgb(98, 121, 99);
+	border-radius: 0.5vw;
+	color: inherit;
+	font-size: inherit;
+	margin: .2vh;
+	padding: .2vw;
+	}
+	
+section.eb .ebtextarea {
+    flex: 1;
+	overflow: auto;
+	resize: none;
+	}
+
+section.eb .ebhtmlarea {
+	flex: 1;
+	overflow: auto;
+	}
+	
+	textarea {
+	background-color: inherit;
+	color: inherit;
+	font-family: courier new;
+	margin: 1vh;
+	padding: 1vw;
+	}
+	
+#outputbox {
+	flex: 2;
+	height: 80 hv;
+	overflow: scroll;
+	background-color: rgb(223, 101, 107);
+	color: white;
+	font-family: courier new;
+	word-wrap: break-word;
+	}
+
+#stackview {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	overflow: auto;
+	justify-content: space-between;
+	background-color: rgb(148, 148, 148);
+	color: white;
+}
+
+#stackjuggling {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	overflow: auto;
+	justify-content: space-around;
+	background-color: rgb(148, 148, 148);
+	color: white;
+	font-size:medium;
 }
 
 footer {
@@ -59,44 +150,28 @@ footer {
 	height: 28vh;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	align-items: stretch;
 	justify-content: space-between;
 }
 
-#outputbox {
-	width: 68vw;
-	background-color: rgb(223, 101, 107);
-	color: white;
-	font-family: courier new;
-	word-wrap: break-word;
-	margin: 1vh;
-	padding: 1vw;
-	}
-
-#stackview {
-	width: 28vw;
-	background-color: rgb(148, 148, 148);
-	color: white;
-	margin: 1vh;
-	padding: 1vw;
-}
-
 #inputbox {
-	width: 68vw;
+	flex: 2;
 	font-family: courier new;
-	font-size: 1vw;
-	border-radius: 1vw;
-	margin: 1vh;
-	padding: 1vw;
+	font-weight: bold;
+	font-size: 1.4vw;
+	color: gray;
+	resize: none;
 	}
-
+	
 #outputcanvas {
-	width: 28vw;
-	border-radius: 1vw;
 	background-color: whitesmoke;
-	margin: 1vh;
-	padding: 1vw;
 	}
+	
+footer * {
+	border-style:groove;
+	border-radius: 0.5vw;
+	margin: 1vh;
+}
+	
 	
 [edit="off"] {
 	background:#d8acf7;
