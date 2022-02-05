@@ -24,8 +24,8 @@
 			if(kvm.screenbuffer!=null) kvm.screenbuffer += ss; // 填 null 就可以關掉。
 			if(kvm.selftest_visible) {
 				let outputBox = $('#outputbox');
-				outputBox.append(kvm.plain(ss)); 				
-				outputBox[0].scrollTop=outputBox[0].scrollHeight;
+				outputBox.append(kvm.plain(ss));
+				outputBox[0].scrollTop=outputBox[0].scrollHeight; //Scroll to the end of the outputbox
 			}
 		}
 
@@ -86,7 +86,8 @@
                 })();
             }                       
         );                          
-                                    
+        
+        // Used to update the stack view element
 		kvm.stackViewRefresh = function() {
 			var stackView = '<pre class="center">--Stack view--</pre><pre>\n';			
 			var count=kvm.stack().length;
@@ -102,7 +103,7 @@
 				stackView += '\t('+kvm.stack().pop()+')\n';
 			} else stackView = '<pre class="center">--Stack view--</pre>\n<pre class="center">--empty--\n<pre>\n';
 			stackView += '</pre>\n';
-			$('#stackview')[0].innerHTML=stackView;
+			$('#stackview > div')[0].innerHTML=stackView;
 			kvm.forth.base = basewas
 			}
 	
@@ -132,6 +133,7 @@
                         if ($(inputbox).is(":focus")) kvm.scroll2inputbox();
                     }
                 })();
+                // Refresh the stack view after the execution of the input text ends
                 kvm.stackViewRefresh();
             }
         }
