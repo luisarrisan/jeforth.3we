@@ -331,27 +331,23 @@
 		\ move-all-editbox-to-a-temp-hidden-div
 	
 	: create-raw-editbox ( -- element ) \ Create an edit box in outputbox
-        editbox-style
+        \ editbox-style
 		<text>
-            <div class=eb>
-            <div class=box>
-            <p>Local Storage</p>
-            <input class=ebname type=text placeholder="field name"></input> /* HTA not support 'placeholder' yet */
-            <p>
-            <input type=checkbox class=ebreadonlyflag disabled="disabled"><input type=button value='R/O' class=ebreadonly>
-            <input type=checkbox class=ebmodeflag disabled="disabled"><input type=button value='</>' class=ebmode>
-            <input type=checkbox class=ebsaveflag disabled="disabled"><input type=button value='Saved' class=ebsave>
-            <input type=button value='Read' class=ebread>
-            <input type=button value='Delete' class=ebdelete>
-            <input type=button value='Close' class=ebclose>
-            <input type=button value='Run' class=ebrun>
-            </p>
-			<div class=ebbody>
-            <textarea class=ebtextarea rows=12 wrap="off"></textarea>
-			<div class=ebhtmlarea></div>
-			</div>
-			</div>
-			</div>
+            <section class="eb wider">
+				<p>Local Storage</p>
+				<input class=ebname type=text placeholder="field name"></input> /* HTA not support 'placeholder' yet */
+				<p>
+				<input type=checkbox class=ebreadonlyflag disabled="disabled"><input type=button value='R/O' class=ebreadonly>
+				<input type=checkbox class=ebmodeflag disabled="disabled"><input type=button value='</>' class=ebmode>
+				<input type=checkbox class=ebsaveflag disabled="disabled"><input type=button value='Saved' class=ebsave>
+				<input type=button value='Read' class=ebread>
+				<input type=button value='Delete' class=ebdelete>
+				<input type=button value='Close' class=ebclose>
+				<input type=button value='Run' class=ebrun>
+				</p>
+					<textarea wrap="off" class="ebtextarea"></textarea>
+					<div class=ebhtmlarea></div>
+			</section>
 		</text> /*remove*/ </o> ( eb ) 	;
 		/// Only HTML tags, no script.
 	
