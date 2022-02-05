@@ -106,7 +106,7 @@ section.eb .ebhtmlarea {
 	overflow: auto;
 	}
 	
-	textarea {
+textarea {
 	background-color: inherit;
 	color: inherit;
 	font-family: courier new;
@@ -129,12 +129,20 @@ section.eb .ebhtmlarea {
 	flex-direction: column;
 	flex-wrap: nowrap;
 	overflow: auto;
+	resize: none;
 	justify-content: space-between;
 	background-color: rgb(148, 148, 148);
 	color: white;
 }
 
+#stackcontent {
+	flex:2;
+	overflow: auto;
+	resize: none;
+}
+
 #stackjuggling {
+	height: 20hv;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
