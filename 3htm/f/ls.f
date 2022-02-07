@@ -742,6 +742,7 @@
 			\ cr cr 
 			\ .( execute the 'list' command ) cr
 			list
+			<o> <button onclick="kvm.dictate('include haikudemo.f')">haiku demo</button></o>
 		</unindent></text> unindent 
 		{} js: tos().doc=pop(1) js: tos().readonly=true js: tos().mode=true
 		js: storage.set("autoexec",pop())
