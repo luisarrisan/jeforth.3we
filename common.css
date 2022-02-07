@@ -51,7 +51,7 @@ main {
 
 section {
 	overflow: auto;
-	font-size: .8vw;
+	font-size:  20px;/* .8vw; */
 	border-radius: 0.5vw;
 	border-style:groove;
 	margin: 1vh;
