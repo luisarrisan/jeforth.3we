@@ -23,13 +23,14 @@
 		<section id="stackview" placeholder="#stackview">
 			<div id="stackcontent"></div>
 			<div id="stackjuggling">
-				<button onclick="kvm.dictate('drop');kvm.stackViewRefresh()">drop</button>
-				<button onclick="kvm.dictate('dup');kvm.stackViewRefresh()">dup</button>
-				<button onclick="kvm.dictate('swap');kvm.stackViewRefresh()">swap</button>
-				<button onclick="kvm.dictate('nip');kvm.stackViewRefresh()">nip</button>
-				<button onclick="kvm.dictate('over');kvm.stackViewRefresh()">over</button>
-				<button onclick="kvm.dictate('rot');kvm.stackViewRefresh()">rot</button>
-				<button onclick="kvm.dictate('-rot');kvm.stackViewRefresh()">-rot</button>
+				<button onclick="kvm.stackViewRefresh()">update</button>
+				<button dictate="drop">drop</button>
+				<button dictate="dup">dup</button>
+				<button dictate="swap">swap</button>
+				<button dictate="nip">nip</button>
+				<button dictate="over">over</button>
+				<button dictate="rot">rot</button>
+				<button dictate="-rot">-rot</button>
 			</div>
 		</section>
 	</main>
@@ -38,6 +39,18 @@
 		<canvas id="outputcanvas"></canvas>
 	</footer>
 	<span id="endofinputbox"></span>
+	<script>
+		function dictateMe(e) {
+			var words = e.attributes.dictate.value.trim()+' ';
+			kvm.dictate(words);
+			kvm.stackViewRefresh();
+			//kvm.type(words)
+		};
+
+		$(document).ready(function() {			
+			$('[dictate]').click(function () { dictateMe(this) })
+		});
+	</script>
 </body>
 </html>
 
